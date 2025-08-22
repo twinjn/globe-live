@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>3D Globus · Live Daten</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+  <script src="https://unpkg.com/three@0.160.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="https://unpkg.com/three-globe@2.27.0/build/three-globe.min.js"></script>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>3D Globus mit Live Daten</h1>
+      <p class="muted">Drehen und zoomen mit der Maus. Klick auf Marker zeigt Infos.</p>
+      <div class="controls">
+        <button id="reloadBtn">Aktualisieren</button>
+        <label class="small"><input type="checkbox" id="spin" checked> sanfte Rotation</label>
+        <select id="dataset">
+          <option value="quakes" selected>Erdbeben letzte Stunde</option>
+          <option value="cities">Demo Pins auf Städte</option>
+        </select>
+      </div>
+    </header>
+
+    <main>
+      <div id="globe"></div>
+      <aside id="info">
+        <h2>Info</h2>
+        <div id="details">Wähle einen Marker</div>
+      </aside>
+    </main>
+
+    <footer>
+      <span>Quellen: USGS Earthquake API und three-globe</span>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
